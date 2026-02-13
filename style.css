@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    transition: background 0.8s ease;
+    overflow: hidden;
+}
+
+/* THEMES */
+.happy {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+}
+
+.sad {
+    background: linear-gradient(to right, #89f7fe, #66a6ff);
+}
+
+.crying {
+    background: linear-gradient(to right, #434343, #000000);
+    color: white;
+}
+
+.dramatic {
+    background: linear-gradient(to right, #ff4e50, #2c3e50);
+    color: white;
+}
+
+.hopeless {
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    color: white;
+}
+
+.container {
+    margin-top: 150px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 36px;
+    transition: 0.5s;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff4081;
+    color: white;
+}
+
+#noBtn {
+    background-color: #555;
+    color: white;
+    position: absolute;
+}
+
+/* HEARTS */
+.hearts span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    animation: float 6s linear infinite;
+    color: red;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
+}
+
+#memoryVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+#countdown {
+    font-size: 100px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 5;
+    color: white;
+}
+/* SCREEN SHAKE */
+@keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(10px, -10px); }
+    50% { transform: translate(-10px, 10px); }
+    75% { transform: translate(10px, 10px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+.shake {
+    animation: shake 0.4s;
+}
+
+/* CONFETTI */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: fall 3s linear forwards;
+    z-index: 10;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* FINAL MESSAGE */
+#finalMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    display: none;
+    z-index: 20;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
